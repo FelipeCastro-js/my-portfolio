@@ -1,4 +1,10 @@
+import AboutMe from "../components/AboutMe";
+import { ContactSection } from "../components/ContactSection";
+import Footer from "../components/Footer";
+import HomeSection from "../components/HomeSection";
 import NavBar from "../components/NavBar";
+import ProjectsSection from "../components/ProjectsSection";
+import SkillsSection from "../components/SkillsSection";
 import StartBackground from "../components/StartBackground";
 import ThemeToggle from "../components/ThemeToggle";
 
@@ -8,6 +14,15 @@ export default function Home() {
       <ThemeToggle />
       <StartBackground />
       <NavBar />
+      <main>
+        <HomeSection />
+        <AboutMe />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
+
+      <Footer />
     </div>
   );
 }

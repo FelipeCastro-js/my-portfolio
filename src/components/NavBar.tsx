@@ -35,7 +35,7 @@ export default function NavBar() {
           href="#home"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground">FelipeTech </span>{" "}
+            <span className="text-glow text-foreground">FelipeDev </span>{" "}
             Portfolio
           </span>
         </a>
