@@ -1,54 +1,72 @@
-# React + TypeScript + Vite
+<h1 align="center">💻 Felipe Castro - Software Developer Portfolio</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">A personal portfolio to showcase my projects, skills and experience as a software developer.</p>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Preview
 
-## Expanding the ESLint configuration
+![Portfolio Preview](https://github.com/user-attachments/assets/5796c01f-4c5e-42bd-8015-88a267b34419)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📚 About the Project
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This portfolio was designed to present my work in a professional and clean way, highlighting my skills in software development, from frontend interfaces to backend systems.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+It reflects my passion for creating robust, scalable, and maintainable digital solutions.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🛠️ Technologies
+
+### 🌐 Frontend
+- React
+- TypeScript
+- Next.js
+- Tailwind CSS
+- Framer Motion
+- Lucide Icons
+- shadcn/ui
+
+### 🧩 Backend / Infra
+- API REST Integration
+- Environment Variables Management
+
+### 🧰 Tools
+- Vite / Webpack
+- ESLint / Prettier
+- Git / GitHub
+- Figma
+
+---
+
+## ✨ Features
+
+✅ Modern UI/UX animations  
+✅ Dark / Light theme toggle  
+✅ Responsive Design (Mobile First)  
+✅ Interactive sections for skills, projects, and contact  
+✅ Professional structure for scalability and maintenance  
+
+---
+
+## 🔥 Live Demo
+👉 [**Visit my Portfolio here**](https://felipe-castro.vercel.app/)
+
+---
+
+## 📥 How to run locally
+
+```bash
+# Clone this repository
+git clone https://github.com/FelipeCastro-js/your-repo.git
+
+# Go into the project folder
+cd your-repo
+
+# Install dependencies
+npm install
+
+# Run the project locally
+npm run dev
