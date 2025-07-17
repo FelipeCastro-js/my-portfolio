@@ -9,18 +9,18 @@ const projects = [
     image: "/projects/project1.jpg",
     tags: ["React", "SaaS"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/FelipeCastro-js/pokedex-react",
   },
 
   {
     id: 2,
-    title: "Daily Nutritional Dashboard",
+    title: "AI Food Detection & Protein Estimation",
     description:
-      "A Python-based application that uses a pre-trained DenseNet121 model to analyze food images and estimate nutritional values. The interface is built with Gradio to provide an easy and interactive user experience.",
+      "An AI-powered system for food detection and protein estimation through computer vision. Built with YOLOv11s and trained on 900+ images using Roboflow and Google Colab. Suitable for health, education, and industry.",
     image: "/projects/project2.jpg",
     tags: ["Python", "Gradio", "DenseNet121"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://detectionimage-wcpavskqznhxfynjh2xzeg.streamlit.app/",
+    githubUrl: "https://github.com/FelipeCastro-js/DetectionImage",
   },
 
   {
@@ -48,9 +48,9 @@ export default function ProjectsSection() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, key) => (
+          {projects.map((project) => (
             <div
-              key={key}
+              key={project.id}
               className="group bg-card rounded-lg overflow-hidden shadow-ws card-hover flex flex-col h-full"
             >
               <div className="h-48 overflow-hidden">

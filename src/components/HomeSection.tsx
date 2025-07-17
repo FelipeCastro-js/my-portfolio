@@ -18,9 +18,10 @@ export default function HomeSection() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I craft engaging web experiences using modern technologies. With a
-            focus on front-end development, I design and build interfaces that
-            are both elegant and highly functional.
+            I'm a Software Developer passionate about building robust digital
+            solutions. I specialize in crafting scalable web applications with
+            modern technologies, from intuitive front-end interfaces to
+            efficient back-end systems.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
