@@ -1,5 +1,6 @@
 import AboutMe from "../components/AboutMe";
 import { ContactSection } from "../components/ContactSection";
+import Experience from "../components/Experience";
 import Footer from "../components/Footer";
 import HomeSection from "../components/HomeSection";
 import NavBar from "../components/NavBar";
@@ -19,6 +20,7 @@ export default function Home() {
         <AboutMe />
         <SkillsSection />
         <ProjectsSection />
+        <Experience />
         <ContactSection />
       </main>
 
