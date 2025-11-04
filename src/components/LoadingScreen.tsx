@@ -9,6 +9,7 @@ function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const fullText = "<Hello World />";
 
   useEffect(() => {
+    let isMounted = true;
     let index = 0;
     const interval = setInterval(() => {
       setText(fullText.substring(0, index));
@@ -18,13 +19,16 @@ function LoadingScreen({ onComplete }: LoadingScreenProps) {
         clearInterval(interval);
 
         setTimeout(() => {
-          onComplete();
+          if (isMounted) onComplete();
         }, 1000);
       }
     }, 100);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [fullText, onComplete]);
 
   return (
     <div className="fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center">

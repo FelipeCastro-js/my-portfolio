@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      {!isLoaded ? (
+      {typeof window !== "undefined" && !isLoaded ? (
         <LoadingScreen onComplete={handleComplete} />
       ) : (
         <BrowserRouter>
