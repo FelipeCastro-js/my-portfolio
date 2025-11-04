@@ -1,55 +1,154 @@
 import { useState } from "react";
 import { cn } from "../lib/utils";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiWebpack,
+  SiFigma,
+  SiPython,
+  SiFastapi,
+  SiDjango,
+  SiNestjs,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiGit,
+  SiGithub,
+  SiDocker,
+  SiUnity,
+  SiKotlin,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+import { FaReact } from "react-icons/fa6";
 
 const skills = [
   // Frontend
-  { name: "HTML/CSS", level: "Advanced", category: "frontend" },
-  { name: "JavaScript", level: "Advanced", category: "frontend" },
-  { name: "TypeScript", level: "Advanced", category: "frontend" },
-  { name: "React", level: "Advanced", category: "frontend" },
-  { name: "Next.js", level: "Intermediate", category: "frontend" },
-  { name: "Tailwind CSS", level: "Advanced", category: "frontend" },
-  { name: "Webpack", level: "Intermediate", category: "frontend" },
-  { name: "Figma", level: "Advanced", category: "frontend" },
+  {
+    name: "HTML5",
+    icon: <SiHtml5 className="text-orange-500" />,
+    category: "frontend",
+  },
+  {
+    name: "CSS3",
+    icon: <SiCss3 className="text-blue-500" />,
+    category: "frontend",
+  },
+  {
+    name: "JavaScript",
+    icon: <SiJavascript className="text-yellow-400" />,
+    category: "frontend",
+  },
+  {
+    name: "TypeScript",
+    icon: <SiTypescript className="text-blue-600" />,
+    category: "frontend",
+  },
+  {
+    name: "React",
+    icon: <SiReact className="text-cyan-400" />,
+    category: "frontend",
+  },
+  {
+    name: "React Native",
+    icon: <FaReact className="text-cyan-400" />,
+    category: "frontend",
+  },
+  {
+    name: "Next.js",
+    icon: <SiNextdotjs className="text-black dark:text-white" />,
+    category: "frontend",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss className="text-sky-400" />,
+    category: "frontend",
+  },
+  {
+    name: "Webpack",
+    icon: <SiWebpack className="text-blue-400" />,
+    category: "frontend",
+  },
+  {
+    name: "Figma",
+    icon: <SiFigma className="text-pink-500" />,
+    category: "frontend",
+  },
 
   // Backend
-  { name: "Python", level: "Advanced", category: "backend" },
-  { name: "FastAPI", level: "Intermediate", category: "backend" },
-  { name: "Django", level: "Intermediate", category: "backend" },
-  { name: "NestJS", level: "Intermediate", category: "backend" },
-  { name: "MongoDB", level: "Intermediate", category: "backend" },
-  { name: "PostgreSQL", level: "Intermediate", category: "backend" },
-  { name: "MySQL", level: "Intermediate", category: "backend" },
-  { name: "API RESTful", level: "Intermediate", category: "backend" },
+  {
+    name: "Python",
+    icon: <SiPython className="text-yellow-500" />,
+    category: "backend",
+  },
+  {
+    name: "FastAPI",
+    icon: <SiFastapi className="text-green-500" />,
+    category: "backend",
+  },
+  {
+    name: "Django",
+    icon: <SiDjango className="text-green-700" />,
+    category: "backend",
+  },
+  {
+    name: "NestJS",
+    icon: <SiNestjs className="text-red-500" />,
+    category: "backend",
+  },
+  {
+    name: "MongoDB",
+    icon: <SiMongodb className="text-green-600" />,
+    category: "backend",
+  },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql className="text-blue-700" />,
+    category: "backend",
+  },
+  {
+    name: "MySQL",
+    icon: <SiMysql className="text-blue-500" />,
+    category: "backend",
+  },
 
   // Tools / Others
-  { name: "Git / GitHub", level: "Advanced", category: "tools" },
-  { name: "Docker", level: "Intermediate", category: "tools" },
-  { name: "VS Code", level: "Advanced", category: "tools" },
-  { name: "Unity (C#)", level: "Intermediate", category: "tools" },
-  { name: "Java (Desktop)", level: "Intermediate", category: "tools" },
-  { name: "Kotlin (Android, MVVM)", level: "Intermediate", category: "tools" },
   {
-    name: "Computer Vision (YOLO, Roboflow)",
-    level: "Basic",
+    name: "Git",
+    icon: <SiGit className="text-orange-600" />,
+    category: "tools",
+  },
+  {
+    name: "GitHub",
+    icon: <SiGithub className="text-gray-800 dark:text-white" />,
+    category: "tools",
+  },
+  {
+    name: "Docker",
+    icon: <SiDocker className="text-blue-500" />,
+    category: "tools",
+  },
+  {
+    name: "Unity (C#)",
+    icon: <SiUnity className="text-gray-700" />,
+    category: "tools",
+  },
+  {
+    name: "Java",
+    icon: <FaJava className="text-red-600" />,
+    category: "tools",
+  },
+  {
+    name: "Kotlin",
+    icon: <SiKotlin className="text-purple-500" />,
     category: "tools",
   },
 ];
-
 const categories = ["all", "frontend", "backend", "tools"];
-
-function getLevelIcon(level: string) {
-  switch (level) {
-    case "Basic":
-      return "🔰";
-    case "Intermediate":
-      return "⚙️";
-    case "Advanced":
-      return "🚀";
-    default:
-      return "";
-  }
-}
 
 export default function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -64,6 +163,7 @@ export default function SkillsSection() {
           My <span className="text-primary"> Skills</span>
         </h2>
 
+        {/* Botones de categorías */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category, key) => (
             <button
@@ -73,7 +173,7 @@ export default function SkillsSection() {
                 "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-foreground hover:bd-secondary"
+                  : "bg-secondary/70 text-foreground hover:bg-secondary"
               )}
             >
               {category}
@@ -81,22 +181,15 @@ export default function SkillsSection() {
           ))}
         </div>
 
+        {/* Grid de skills */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filterSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs transform transition-transform duration-300 hover:scale-105"
+              className="bg-card p-6 rounded-lg shadow-xs transform transition-transform duration-300 hover:scale-105 flex items-center gap-4"
             >
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="font-semibold text-lg">{skill.name}</h3>
-                <span className="text-xl">{getLevelIcon(skill.level)}</span>
-              </div>
-
-              <div className="text-right">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}
-                </span>
-              </div>
+              <span className="text-4xl">{skill.icon}</span>
+              <h3 className="font-semibold text-lg">{skill.name}</h3>
             </div>
           ))}
         </div>
