@@ -1,37 +1,74 @@
 import { motion } from "framer-motion";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { experiences } from "../lib/utils";
 
 interface ExperienceProps {
   role: string;
   company: string;
   period: string;
   description: string;
+  icon: string;
 }
 
-const experiences: ExperienceProps[] = [
-  {
-    role: "Software Development Intern",
-    company: "Habi CO",
-    period: "2023 - 2024",
-    description:
-      "Supported internal automation projects using Python to streamline operational workflows. Collaborated on technical documentation of data pipelines and integrated tools like Pipefy and Mantiz, improving process visibility and efficiency across the team.",
-  },
+const ExperienceCard = ({ experience }: { experience: ExperienceProps }) => (
+  <VerticalTimelineElement
+    contentStyle={{
+      background: "transparent",
+      boxShadow: "none",
+      padding: "0",
+    }}
+    contentArrowStyle={{ borderRight: "7px solid hsl(var(--card))" }}
+    iconStyle={{
+      background: "hsl(var(--card))",
+      boxShadow: "0 0 0 1px hsl(var(--border))",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+    icon={
+      <img
+        src={experience.icon}
+        alt={`${experience.company} logo`}
+        className="w-[60%] h-[60%] object-contain"
+      />
+    }
+  >
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.02, rotate: 0.5 }}
+      animate
+      className="
+        rounded-xl p-6 transition-colors duration-300
+        bg-[hsl(var(--card))] text-[hsl(var(--foreground))]
+        shadow-md dark:shadow-none
+        border border-[hsl(var(--border))]
+        dark:border-white/10
+      "
+    >
+      <h3 className="text-xl font-bold">{experience.role}</h3>
 
-  {
-    role: "Junior Developer",
-    company: "Habi CO",
-    period: "2024 - 2025",
-    description:
-      "Contributed to both frontend and backend development using React, Next.js, and FastAPI. Worked on building scalable interfaces, integrating APIs, and deploying solutions on AWS. Focused on improving automation and optimizing workflows through clean, efficient code and cross-team collaboration.",
-  },
+      <div className="mt-1 mb-2 flex items-center justify-center gap-2">
+        <span className="text-primary text-sm font-medium">
+          {experience.company}
+        </span>
+        <span className="text-xs text-gray-500 dark:text-gray-400">
+          {experience.period}
+        </span>
+      </div>
 
-  {
-    role: "Freelance Full Stack Developer",
-    company: "Independent",
-    period: "2025 - Present",
-    description:
-      "Providing full stack solutions for small businesses and personal projects, combining React and Next.js on the frontend with Python and FastAPI on the backend. Managing deployments, performance tuning, and maintaining a high standard of code quality and user experience.",
-  },
-];
+      <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+        {experience.description}
+      </p>
+    </motion.div>
+  </VerticalTimelineElement>
+);
 
 function Experience() {
   return (
@@ -41,41 +78,12 @@ function Experience() {
           My <span className="text-primary">Experience</span>
         </h2>
 
-        {/* Timeline wrapper */}
-        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start relative">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="relative flex-1 mb-12 lg:mb-0 lg:px-6"
-            >
-              <div className="flex justify-center lg:justify-start mb-4">
-                <span className="relative flex items-center justify-center">
-                  <span className="animate-ping absolute inline-flex h-6 w-6 rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-6 w-6 bg-primary"></span>
-                </span>
-              </div>
-
-              {/* Card */}
-              <div className="bg-card p-6 rounded-xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-                <h3 className="text-xl font-bold text-white mb-1">
-                  {exp.role}
-                </h3>
-                <span className="inline-block text-xs font-medium bg-primary/10 text-primary px-3 py-1 rounded-full mb-3">
-                  {exp.company} • {exp.period}
-                </span>
-                <p className="text-foreground leading-relaxed">
-                  {exp.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-
-          <div className="absolute top-3 left-[14px] w-[2px] h-full bg-primary/30 lg:hidden"></div>
-          <div className="hidden lg:block absolute top-[28px] left-0 right-0 h-[2px] bg-primary/30"></div>
+        <div className="mt-20 flex flex-col">
+          <VerticalTimeline>
+            {experiences.map((experience, index) => (
+              <ExperienceCard key={index} experience={experience} />
+            ))}
+          </VerticalTimeline>
         </div>
       </div>
     </section>
