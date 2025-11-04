@@ -5,17 +5,20 @@ import { useState } from "react";
 import LoadingScreen from "./components/LoadingScreen";
 
 function App() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   return (
     <>
-      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      {!isLoaded ? (
+        <LoadingScreen onComplete={() => setIsLoaded(true)} />
+      ) : (
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      )}
     </>
   );
 }
