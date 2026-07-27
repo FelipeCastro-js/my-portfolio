@@ -66,7 +66,7 @@ git clone https://github.com/FelipeCastro-js/your-repo.git
 cd your-repo
 
 # Install dependencies
-npm install
+pnpm install
 
 # Run the project locally
-npm run dev
+pnpm dev

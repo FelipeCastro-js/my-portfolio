@@ -3,11 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@11.17.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -17,7 +19,6 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.508.0",
-    "my-portfolio": "file:",
     "path": "^0.12.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

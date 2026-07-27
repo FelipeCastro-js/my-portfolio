@@ -2,7 +2,7 @@ import { useState } from "react";
 import { cn } from "../lib/utils";
 import {
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiJavascript,
   SiTypescript,
   SiReact,
@@ -35,7 +35,7 @@ const skills = [
   },
   {
     name: "CSS3",
-    icon: <SiCss3 className="text-blue-500" />,
+    icon: <SiCss className="text-blue-500" />,
     category: "frontend",
   },
   {
