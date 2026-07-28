@@ -11,22 +11,22 @@ export default function AboutMe() {
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">Software Developer</h3>
             <p className="text-muted-foreground">
-              With over a year and a half of experience in software development,
-              I’ve contributed to both front-end and back-end systems, building
-              scalable, maintainable, and efficient web applications.
+              Software Developer with over 2.5 years of experience designing and implementing end-to-end digital solutions.
+              Proven track record in building scalable backend services with Python and Node.js, seamlessly integrated with
+              modern web and mobile interfaces using React and React Native.
             </p>
             <p className="text-muted-foreground">
-              I enjoy solving complex problems through clean code, scalable
-              architecture, and continuous learning. I'm always exploring new
-              tools and best practices to improve as a developer.
+              My experience spans the entire software lifecycle—from automating internal workflows and integrating payment gateways
+              to training custom computer vision models and deploying cloud infrastructure on AWS.
+              I focus on writing clean, maintainable code designed to deliver real business impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="cosmic-button">
                 Get In Touch
               </a>
               <a
-                href="/cv/Hoja de vida Felipe Castro.pdf"
-                download
+                href="/cv/Felipe_Castro_CV.pdf"
+                download="Felipe_Castro_CV.pdf"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV

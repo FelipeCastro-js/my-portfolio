@@ -22,7 +22,14 @@ import {
   SiDocker,
   SiUnity,
   SiKotlin,
+  SiNodedotjs,
+  SiSqlalchemy,
+  SiMercadopago,
+  SiPytest,
+  SiGithubactions,
+  SiPostman,
 } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
 import { FaReact } from "react-icons/fa6";
 
@@ -39,115 +46,151 @@ const skills = [
     category: "frontend",
   },
   {
-    name: "JavaScript",
+    name: "JAVASCRIPT",
     icon: <SiJavascript className="text-yellow-400" />,
     category: "frontend",
   },
   {
-    name: "TypeScript",
+    name: "TYPESCRIPT",
     icon: <SiTypescript className="text-blue-600" />,
     category: "frontend",
   },
   {
-    name: "React",
+    name: "REACT",
     icon: <SiReact className="text-cyan-400" />,
     category: "frontend",
   },
   {
-    name: "React Native",
+    name: "REACT NATIVE",
     icon: <FaReact className="text-cyan-400" />,
     category: "frontend",
   },
   {
-    name: "Next.js",
+    name: "NEXT.JS",
     icon: <SiNextdotjs className="text-black dark:text-white" />,
     category: "frontend",
   },
   {
-    name: "Tailwind CSS",
+    name: "TAILWIND CSS",
     icon: <SiTailwindcss className="text-sky-400" />,
     category: "frontend",
   },
   {
-    name: "Webpack",
+    name: "WEBPACK",
     icon: <SiWebpack className="text-blue-400" />,
     category: "frontend",
   },
   {
-    name: "Figma",
+    name: "FIGMA",
     icon: <SiFigma className="text-pink-500" />,
     category: "frontend",
   },
 
   // Backend
   {
-    name: "Python",
+    name: "PYTHON",
     icon: <SiPython className="text-yellow-500" />,
     category: "backend",
   },
   {
-    name: "FastAPI",
-    icon: <SiFastapi className="text-green-500" />,
+    name: "NODE.JS",
+    icon: <SiNodedotjs className="text-green-500" />,
     category: "backend",
   },
   {
-    name: "Django",
-    icon: <SiDjango className="text-green-700" />,
+    name: "FASTAPI",
+    icon: <SiFastapi className="text-emerald-500" />,
     category: "backend",
   },
   {
-    name: "NestJS",
+    name: "NESTJS",
     icon: <SiNestjs className="text-red-500" />,
     category: "backend",
   },
   {
-    name: "MongoDB",
-    icon: <SiMongodb className="text-green-600" />,
+    name: "DJANGO",
+    icon: <SiDjango className="text-green-700" />,
     category: "backend",
   },
   {
-    name: "PostgreSQL",
+    name: "SQLALCHEMY",
+    icon: <SiSqlalchemy className="text-red-400" />,
+    category: "backend",
+  },
+  {
+    name: "POSTMAN",
+    icon: <SiPostman className="text-orange-500" />,
+    category: "backend",
+  },
+  {
+    name: "POSTGRESQL",
     icon: <SiPostgresql className="text-blue-700" />,
     category: "backend",
   },
   {
-    name: "MySQL",
+    name: "MYSQL",
     icon: <SiMysql className="text-blue-500" />,
     category: "backend",
   },
+  {
+    name: "MONGODB",
+    icon: <SiMongodb className="text-green-600" />,
+    category: "backend",
+  },
 
-  // Tools / Others
+  // Tools & Integrations
   {
-    name: "Git",
-    icon: <SiGit className="text-orange-600" />,
+    name: "MERCADO PAGO API",
+    icon: <SiMercadopago className="text-sky-400" />,
     category: "tools",
   },
   {
-    name: "GitHub",
-    icon: <SiGithub className="text-gray-800 dark:text-white" />,
+    name: "AWS CLOUD",
+    icon: <FaAws className="text-amber-500" />,
     category: "tools",
   },
   {
-    name: "Docker",
+    name: "CI/CD",
+    icon: <SiGithubactions className="text-blue-500" />,
+    category: "tools",
+  },
+  {
+    name: "TESTING (PYTEST)",
+    icon: <SiPytest className="text-yellow-400" />,
+    category: "tools",
+  },
+  {
+    name: "DOCKER",
     icon: <SiDocker className="text-blue-500" />,
     category: "tools",
   },
   {
-    name: "Unity (C#)",
-    icon: <SiUnity className="text-gray-700" />,
+    name: "GIT",
+    icon: <SiGit className="text-orange-600" />,
     category: "tools",
   },
   {
-    name: "Java",
+    name: "GITHUB",
+    icon: <SiGithub className="text-gray-800 dark:text-white" />,
+    category: "tools",
+  },
+  {
+    name: "UNITY (C#)",
+    icon: <SiUnity className="text-gray-700 dark:text-gray-300" />,
+    category: "tools",
+  },
+  {
+    name: "JAVA",
     icon: <FaJava className="text-red-600" />,
     category: "tools",
   },
   {
-    name: "Kotlin",
+    name: "KOTLIN",
     icon: <SiKotlin className="text-purple-500" />,
     category: "tools",
   },
 ];
+
 const categories = ["all", "frontend", "backend", "tools"];
 
 export default function SkillsSection() {
@@ -170,10 +213,10 @@ export default function SkillsSection() {
               key={key}
               onClick={() => setActiveCategory(category)}
               className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                "px-5 py-2 rounded-full transition-all duration-300 capitalize cursor-pointer",
                 activeCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-foreground hover:bg-secondary"
+                  ? "bg-primary text-primary-foreground shadow-[0_0_12px_rgba(139,92,246,0.4)]"
+                  : "bg-secondary/70 text-foreground hover:bg-secondary border border-border/40"
               )}
             >
               {category}
@@ -186,10 +229,14 @@ export default function SkillsSection() {
           {filterSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs transform transition-transform duration-300 hover:scale-105 flex items-center gap-4"
+              className="bg-card p-6 rounded-xl border border-border/60 shadow-xs transform transition-all duration-300 hover:scale-105 hover:border-primary/40 flex items-center gap-4 group"
             >
-              <span className="text-4xl">{skill.icon}</span>
-              <h3 className="font-semibold text-lg">{skill.name}</h3>
+              <span className="text-4xl transition-transform duration-300 group-hover:scale-110">
+                {skill.icon}
+              </span>
+              <h3 className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
+                {skill.name}
+              </h3>
             </div>
           ))}
         </div>

@@ -4,54 +4,20 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
-    title: "Pokedex Website",
-    description:
-      "Dynamic website built with React and Sass, consuming the Pokémon API. Practiced endpoint integration and responsive design with a focus on attractive UI.",
-    image: "/projects/project1.jpg",
-    tags: ["React", "SaaS"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/FelipeCastro-js/pokedex-react",
-  },
-
-  {
-    id: 2,
     title: "AI Food Detection & Protein Estimation",
     description:
-      "Computer vision system using YOLOv11s, trained on 900+ images. Implemented with Python, Gradio, and Streamlit, strengthening my skills in dataset handling, model training, and deployment.",
+      "Computer vision system powered by a custom-trained YOLOv11s model on 900+ images. Designed to detect food items in real time and estimate protein content, deployed via interactive interfaces with a strong focus on dataset optimization and inference efficiency.",
     image: "/projects/project2.jpg",
-    tags: ["Python", "Gradio", "DenseNet121"],
+    tags: ["Python", "YOLOv11s", "Gradio", "Computer Vision", "Streamlit"],
     demoUrl: "https://detectionimage-wcpavskqznhxfynjh2xzeg.streamlit.app/",
     githubUrl: "https://github.com/FelipeCastro-js/DetectionImage",
   },
 
   {
-    id: 3,
-    title: "The Truman Show - 3D Mobile Game",
-    description:
-      "Mobile game developed in Unity (C#) featuring 3 levels and timed objectives. Educational project to practice game logic, map design, and interactive mechanics.",
-    image: "/projects/project3.jpg",
-    tags: ["Unity", "C#", "Game Development"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-
-  {
-    id: 4,
-    title: "Estatein Landing Page",
-    description:
-      "Modern landing page built with React and Tailwind CSS, focused on animations and responsive layouts. Key exercise to master Tailwind utilities and smooth visual effects.",
-    image: "/projects/project4.png",
-    tags: ["React", "Tailwind CSS", "Lucide Icons", "Landing Page"],
-    demoUrl: "https://real-estate-chi-ashy.vercel.app/",
-    githubUrl:
-      "https://github.com/FelipeCastro-js/real-estate?tab=readme-ov-file",
-  },
-
-  {
-    id: 5,
+    id: 2,
     title: "Pomodoro Timer App",
     description:
-      "Mobile app developed in React Native with automatic Pomodoro cycles, short/long breaks, and audio alerts using Expo Audio. Reinforced my skills in state management and mobile UI design.",
+      "Mobile productivity application featuring structured Pomodoro cycles, customizable break times, and audio alerts using Expo Audio. Built with clean React Native component architecture and efficient local state handling.",
     image: "/projects/project5.png",
     tags: ["React Native", "Typescript", "Expo Audio", "Mobile UI"],
     demoUrl: "#",
@@ -59,15 +25,49 @@ const projects = [
   },
 
   {
-    id: 6,
+    id: 3,
+    title: "Estatein Landing Page",
+    description:
+      "Modern, highly responsive real estate landing page built with React and Tailwind CSS. Features optimized UI components, smooth animations, and accessible layouts following modern production standards.",
+    image: "/projects/project4.png",
+    tags: ["React", "Next.js", "Tailwind CSS", "Lucide Icons"],
+    demoUrl: "https://real-estate-chi-ashy.vercel.app/",
+    githubUrl:
+      "https://github.com/FelipeCastro-js/real-estate?tab=readme-ov-file",
+  },
+
+  {
+    id: 4,
     title: "Mortgage Calculator App",
     description:
-      "Mortgage calculator (Frontend Mentor challenge) built with React and Tailwind. Allows users to input amount, term, and interest rate, displaying real-time payments. Helped me improve form handling, business logic, and accessibility.",
+      "Interactive financial calculator providing real-time mortgage payment estimations based on custom loan terms, interest rates, and principal amounts. Focused on form validation, precise business logic, and web accessibility.",
     image: "/projects/project6.png",
-    tags: ["React", "Tailwind CSS", "Frontend Mentor", "Responsive UI"],
+    tags: ["React", "Tailwind CSS", "Form Logic"],
     demoUrl: "https://hipo-smart.vercel.app/",
     githubUrl:
       "https://github.com/FelipeCastro-js/HipoSmart?tab=readme-ov-file",
+  },
+
+  {
+    id: 5,
+    title: "The Truman Show - 3D Mobile Game",
+    description:
+      "3D interactive mobile game engineered in Unity with C#. Features custom game loop logic, timed objective systems, and optimized 3D map navigation across multiple levels.",
+    image: "/projects/project3.jpg",
+    tags: ["Unity", "C#", "3D Game Dev", "Mobile"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
+
+  {
+    id: 6,
+    title: "Pokedex Website",
+    description:
+      "Dynamic website built with React and Sass, consuming the Pokémon API. Practiced endpoint integration and responsive design with a focus on attractive UI.",
+    image: "/projects/project1.jpg",
+    tags: ["React", "SaaS / CSS", "REST API"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/FelipeCastro-js/pokedex-react",
   },
 ];
 
@@ -79,7 +79,7 @@ export default function ProjectsSection() {
           Featured <span className="text-primary"> Projects </span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recen projects. Each projects was carefully
+          Here are some of my recent projects. Each project was carefully
           crafted with attention to detail, performance, and user experience.
         </p>
 
